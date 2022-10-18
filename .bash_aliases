@@ -7,7 +7,7 @@ alias ms_server="ssh -p 7822 shaunfat@68.66.226.103"
 
 alias mysite="cd ~/Projects/mysite; source setup"
 
-alias v='vim $(fzf)'
+alias v="search_and_edit"
 alias vim="nvim"
 vim_config_path=~/.vimrc
 alias vim_config="vim ${vim_config_path}"
@@ -15,6 +15,12 @@ nvim_config_path=~/.config/nvim/init.vim
 alias nvim_config="vim ${nvim_config_path}"
 alias vimrc="nvim_config"
 alias bashrc="vim ~/.bash_aliases"
+
+search_and_edit() {
+    selection=$(fzf)
+    [[ -z $selection ]] && return
+    vim $selection
+}
 
 note() {
     printf -v date '%(%Y-%m-%d)T\n' -1
