@@ -7,6 +7,8 @@ alias ms_server="ssh -p 7822 shaunfat@68.66.226.103"
 
 alias mysite="cd ~/Projects/mysite; source setup"
 
+alias start_syncthing="$HOME/SyncThing/syncthing-linux-amd64-v1.21.0/syncthing"
+
 alias v="search_and_edit"
 alias vim="nvim"
 vim_config_path=~/.vimrc
