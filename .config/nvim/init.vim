@@ -26,6 +26,12 @@ else
 
     colorscheme slate
 
+    " Automatically install missing plugins on startup
+    autocmd VimEnter *
+	\  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+	\|   PlugInstall --sync | q
+	\| endif
+
     call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
