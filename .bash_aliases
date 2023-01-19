@@ -67,6 +67,7 @@ alias nvim_config="vim ${nvim_config_path}"
 alias vimrc="nvim_config"
 alias bashrc="vim ~/.bash_aliases"
 alias todo="vim ~/SyncThing/FileShare/TODO.md"
+cdl() { cd "$@" && ls; }
 
 search_and_edit() {
     selection=$(fzf)
