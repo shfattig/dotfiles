@@ -91,5 +91,8 @@ notes() {
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-source ~/.bash_aliases.local
+# Source local bash script if exists
+if [[ -f ~/.bash_aliases.local ]]; then
+    source ~/.bash_aliases.local
+fi
 
