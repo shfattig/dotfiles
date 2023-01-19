@@ -59,6 +59,7 @@ start_work () {
 alias python="python3"
 alias v="search_and_edit"
 alias vim="nvim"
+alias vimdiff="nvim -d"
 vim_config_path=~/.vimrc
 alias vim_config="vim ${vim_config_path}"
 nvim_config_path=~/.config/nvim/init.vim
