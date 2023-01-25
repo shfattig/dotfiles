@@ -32,13 +32,16 @@ search_and_edit() {
     vim $selection
 }
 
+NOTES_PATH=~/.notes
+
+# Create new note
 note() {
     printf -v date '%(%Y-%m-%d)T\n' -1
     date=$(echo $date | xargs)  #trim whitespace
-    vim ~/.notes/${date}.txt
+    vim $NOTES_PATH/${date}.txt
 }
 
-NOTES_PATH=~/.notes
+# Open note
 notes() {
     selection=$(ls -r $NOTES_PATH | fzf --preview="less ${NOTES_PATH}/{}")
     [[ -z $selection ]] && return
