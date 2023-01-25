@@ -21,6 +21,9 @@ else
     set shiftwidth  =4
     set smartcase ignorecase
 
+    " Connecting '+' register to system clipboard
+    set clipboard+=unnamedplus
+
     "remove highlight on search
     nnoremap <C-n> :nohl<Enter>
 
