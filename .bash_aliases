@@ -26,11 +26,11 @@ note() {
     vim ~/.notes/${date}.txt
 }
 
+NOTES_PATH=~/.notes
 notes() {
-    notes_path=~/.notes
-    selection=$(ls $notes_path | fzf --preview="less ${notes_path}/{}")
+    selection=$(ls -r $NOTES_PATH | fzf --preview="less ${NOTES_PATH}/{}")
     [[ -z $selection ]] && return
-    vim $notes_path/$selection
+    vim $NOTES_PATH/$selection
 }
 
 # command used to track dotfiles in git
