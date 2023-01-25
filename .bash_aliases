@@ -11,11 +11,15 @@ nvim_config_path=~/.config/nvim/init.vim
 alias nvim_config="vim ${nvim_config_path}"
 alias vimrc="nvim_config"
 alias bashrc="vim ~/.bash_aliases"
-todo() {
-    FILESHARE_PATH=~/SyncThing/FileShare
-    vim -c "cd $FILESHARE_PATH" ~/SyncThing/FileShare/TODO.md
-}
 cdl() { cd "$@" && ls; }
+
+if [[ -z $FILESHARE_PATH ]]; then
+    echo "WARNING: no FILESHARE_PATH defined"
+else
+    todo() {
+	vim -c "cd $FILESHARE_PATH" ~/SyncThing/FileShare/TODO.md
+    }
+fi
 
 search_and_edit() {
     selection=$(fzf)
