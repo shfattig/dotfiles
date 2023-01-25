@@ -11,7 +11,10 @@ nvim_config_path=~/.config/nvim/init.vim
 alias nvim_config="vim ${nvim_config_path}"
 alias vimrc="nvim_config"
 alias bashrc="vim ~/.bash_aliases"
-alias todo="vim ~/SyncThing/FileShare/TODO.md"
+todo() {
+    FILESHARE_PATH=~/SyncThing/FileShare
+    vim -c "cd $FILESHARE_PATH" ~/SyncThing/FileShare/TODO.md
+}
 cdl() { cd "$@" && ls; }
 
 search_and_edit() {
