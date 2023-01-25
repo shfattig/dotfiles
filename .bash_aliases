@@ -33,6 +33,22 @@ notes() {
     vim $NOTES_PATH/$selection
 }
 
+# Use Telescope live_grep to search for a
+# string in current directory
+search_files() {
+    nvim -c "Telescope live_grep theme=dropdown"
+}
+# "find file"
+alias ff="search_files"
+
+search_notes() {
+    pushd $NOTES_PATH > /dev/null
+    search_files
+    popd > /dev/null
+}
+# "find note"
+alias fn="search_notes"
+
 # command used to track dotfiles in git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
