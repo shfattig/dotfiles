@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Source local bash script if exists
+if [[ -f ~/.bash_aliases.local ]]; then
+    source ~/.bash_aliases.local
+fi
+
 # Utilities
 alias python="python3"
 alias v="search_and_edit"
@@ -60,7 +65,7 @@ alias fn="search_notes"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Source local bash script if exists
-if [[ -f ~/.bash_aliases.local ]]; then
-    source ~/.bash_aliases.local
+if [[ -f ~/.bash_aliases.after ]]; then
+    source ~/.bash_aliases.after
 fi
 
