@@ -106,10 +106,18 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
+--
 -- Inform language server of the available capabilities
-require('lspconfig')['pyright'].setup{
+require('lspconfig').pyright.setup{
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
 }
 
+require('lspconfig').rust_analyzer.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+      "rustup", "run", "stable", "rust-analyzer"
+  }
+}
