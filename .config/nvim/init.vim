@@ -18,7 +18,11 @@ else
     " Get back full line yank
     unmap Y
 
+    " Search for or in files
     nnoremap <C-p> :Telescope find_files<Enter>
+    nnoremap <leader>s :Telescope live_grep<Enter>
+
+    " jf to escape insert mode and save
     inoremap jf <Esc>:w<Enter>
     inoremap  
     set shiftwidth  =4
