@@ -34,6 +34,9 @@ else
     "remove highlight on search
     nnoremap <C-n> :nohl<Enter>
 
+    " Custom command to open current dir
+    nnoremap <leader>d :e %:h<Enter>
+
     colorscheme slate
 
     " Automatically install missing plugins on startup
