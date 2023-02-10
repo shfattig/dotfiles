@@ -6,15 +6,20 @@ if [[ -f ~/.bash_aliases.local ]]; then
 fi
 
 # Utilities
-alias python="python3"
+## Editing
 alias v="search_and_edit"
 alias vim="nvim"
 alias vimdiff="nvim -d"
-vim_config_path=~/.vimrc
-alias vim_config="vim ${vim_config_path}"
-nvim_config_path=~/.config/nvim
-alias nvim_config="vim ${nvim_config_path}"
-alias vimrc="nvim_config"
+alias vimrc="vim ~/.config/nvim"
+search_and_edit() {
+    selection=$(fzf)
+    [[ -z $selection ]] && return
+    history -s vim $selection
+    vim $selection
+}
+
+## Helpful aliases
+alias python="python3"
 alias bashrc="vim ~/.bash_aliases"
 cdl() { cd "$@" && ls; }
 mkd() { mkdir "$@" && cd "$@"; }
@@ -22,17 +27,13 @@ mkd() { mkdir "$@" && cd "$@"; }
 if [[ -z $FILESHARE_PATH ]]; then
     echo "WARNING: no FILESHARE_PATH defined"
 else
+    # Open shared todo file
     todo() {
 	vim -c "cd $FILESHARE_PATH" ~/SyncThing/FileShare/TODO.md
     }
 fi
 
-search_and_edit() {
-    selection=$(fzf)
-    [[ -z $selection ]] && return
-    vim $selection
-}
-
+## Notes
 NOTES_PATH=~/.notes
 
 # Create new note
