@@ -114,6 +114,17 @@ require('lspconfig').pyright.setup{
   capabilities = capabilities,
 }
 
+require('lspconfig').sumneko_lua.setup{
+	on_attach = on_attach,
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' },
+			}
+		}
+	}
+}
+
 require('lspconfig').rust_analyzer.setup{
   on_attach = on_attach,
   capabilities = capabilities,
