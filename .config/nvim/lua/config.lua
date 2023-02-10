@@ -114,6 +114,10 @@ require('lspconfig').pyright.setup{
   capabilities = capabilities,
 }
 
+require('lspconfig').tsserver.setup {
+		filetypes = { "javascript" }
+}
+
 require('lspconfig').sumneko_lua.setup{
 	on_attach = on_attach,
 	settings = {
