@@ -25,7 +25,7 @@ else
     " jf to escape insert mode and save
     inoremap jf <Esc>:w<Enter>
     inoremap  
-    set shiftwidth  =4
+    set shiftwidth=4 tabstop=4 expandtab
     set smartcase ignorecase
 
     " Connecting '+' register to system clipboard
