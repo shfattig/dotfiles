@@ -52,6 +52,8 @@ else
     Plug 'hrsh7th/cmp-nvim-lsp'
     " Plug 'hrsh7th/cmp-buffer'
     " Plug 'hrsh7th/cmp-path'
+    Plug 'williamboman/mason.nvim'
+    Plug 'williamboman/mason-lspconfig.nvim'
     call plug#end()
 
     " Load any lua configs
