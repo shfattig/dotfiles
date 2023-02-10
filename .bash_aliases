@@ -17,6 +17,7 @@ alias nvim_config="vim ${nvim_config_path}"
 alias vimrc="nvim_config"
 alias bashrc="vim ~/.bash_aliases"
 cdl() { cd "$@" && ls; }
+mkd() { mkdir "$@" && cd "$@"; }
 
 if [[ -z $FILESHARE_PATH ]]; then
     echo "WARNING: no FILESHARE_PATH defined"
